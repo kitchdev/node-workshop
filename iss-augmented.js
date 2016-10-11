@@ -18,15 +18,14 @@
                   actualLocation = actualLocation.results[0].geometry['location']
                   var cityLat = actualLocation.lat;
                   var cityLong = actualLocation.lng;
-                var latLon = cityLat, cityLong;
 
                   request('http://api.open-notify.org/iss-now.json', function(err, input) {
                       if (err) {
                           console.log(err);
                       } else {
                           var issLocation = JSON.parse(input.body);
-                          var issLong = issLocation.longitude;
-                          var issLat = issLocation.latitude;
+                          var issLong = issLocation.iss_position.longitude;
+                          var issLat = issLocation.iss_position.latitude;
     
                        var p1 = new LatLon(cityLat,cityLong);
                        var p2 = new LatLon(issLat, issLong);
