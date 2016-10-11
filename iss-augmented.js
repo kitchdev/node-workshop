@@ -30,9 +30,9 @@
                        var p1 = new LatLon(cityLat,cityLong);
                        var p2 = new LatLon(issLat, issLong);
                        var distance = p1.distanceTo(p2);
-                       
-                       console.log(distance);
-                        
+                       distance = distance/1000;
+                       console.log(distance.toFixed(2));
+                        //kilometers
                          
                       }
 
